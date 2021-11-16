@@ -1,2 +1,25 @@
-<h1>Hello World !</h1>
-<p>Louka Fauvel</p>
+<div class="ui attached black inverted segment">
+    <div class="ui inverted relaxed divided list">
+
+        {% for objectList in allList %}
+        <div class="item">
+            <a>{{objectList}}</a>
+            <a class="active" href="delete/{{id}}">
+                <span class="ui circular mini icon inverted red button right floated">
+                    <i class="ui times icon"></i>
+                </span>
+            </a>
+        </div>
+        {% endfor %}
+
+        <div class="item">
+            <form class="ui inline inverted form" method="post" action="/todos/add">
+                <div class="ui input">
+                    <input type="text" name="objectList" placeholder="Saisir un objet...">
+                </div>
+                <button class="ui button">Valider</button>
+            </form>
+        </div>
+
+    </div>
+</div>

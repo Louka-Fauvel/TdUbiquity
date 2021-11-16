@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "67fbf6692fbe03f2e23f152b73a26501",
+    "content-hash": "159eecb27b33c303362f1af1589d75cb",
     "packages": [
         {
             "name": "frameworks/jquery",
@@ -709,16 +709,16 @@
         },
         {
             "name": "phpmv/ubiquity-webtools",
-            "version": "2.4.11",
+            "version": "2.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpMv/ubiquity-webtools.git",
-                "reference": "3ea115c33d4e044e2e8c301d418a8a6b5a6d7e1f"
+                "reference": "fbed11a5a3118b6012bac27005418b2515d971d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpMv/ubiquity-webtools/zipball/3ea115c33d4e044e2e8c301d418a8a6b5a6d7e1f",
-                "reference": "3ea115c33d4e044e2e8c301d418a8a6b5a6d7e1f",
+                "url": "https://api.github.com/repos/phpMv/ubiquity-webtools/zipball/fbed11a5a3118b6012bac27005418b2515d971d2",
+                "reference": "fbed11a5a3118b6012bac27005418b2515d971d2",
                 "shasum": ""
             },
             "require": {
@@ -759,9 +759,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phpMv/ubiquity-webtools/issues",
-                "source": "https://github.com/phpMv/ubiquity-webtools/tree/2.4.11"
+                "source": "https://github.com/phpMv/ubiquity-webtools/tree/2.4.12"
             },
-            "time": "2021-11-02T01:41:19+00:00"
+            "time": "2021-11-16T00:58:40+00:00"
         },
         {
             "name": "prismjs/prism",
@@ -862,7 +862,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.4"
+        "php": ">=8.0"
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
