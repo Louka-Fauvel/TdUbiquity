@@ -3,17 +3,31 @@
 
         {% for objectList in allList %}
         <div class="item">
-            <a>{{objectList}}</a>
-            <a class="active" href="delete/{{id}}">
+            <div style="">
+                <form class="ui inverted left floated form" method="post" action="{{path('todos.edit',[loop.index0])}}">
+                    <div class="ui inverted mini input">
+                        <input type="text" name="" value="{{objectList}}">
+                    </div>
+                </form>
+            </div>
+            <div style="display: none">
+                <a>{{objectList}}</a>
+            </div>
+            <a class="active" href="{{path('todos.delete',[loop.index0])}}">
                 <span class="ui circular mini icon inverted red button right floated">
                     <i class="ui times icon"></i>
+                </span>
+            </a>
+            <a class="active" href="">
+                <span class="ui circular mini icon inverted grey button right floated">
+                    <i class="ui edit icon"></i>
                 </span>
             </a>
         </div>
         {% endfor %}
 
         <div class="item">
-            <form class="ui inline inverted form" method="post" action="/todos/add">
+            <form class="ui inline inverted form" method="post" action="{{path('todos.add')}}">
                 <div class="ui input">
                     <input type="text" name="objectList" placeholder="Saisir un objet...">
                 </div>

@@ -1,18 +1,23 @@
 <?php
 namespace controllers;
+use Ajax\JsUtils;
 use Ubiquity\attributes\items\router\Get;
 use Ubiquity\attributes\items\router\Post;
 use Ubiquity\attributes\items\router\Route;
+use Ubiquity\controllers\auth\AuthController;
+use Ubiquity\controllers\auth\WithAuthTrait;
 use Ubiquity\utils\http\URequest;
 use Ubiquity\utils\http\USession;
 
 /**
   * Controller TodosController
   * Faire composer install
+  * @property JsUtils $jquery
   */
 #[Route('/todos/')]
 class TodosController extends \controllers\ControllerBase{
 
+    use WithAuthTrait;
     const CACHE_KEY = 'datas/lists/';
     const EMPTY_LIST_ID='not saved';
     const LIST_SESSION_KEY='list';
@@ -49,8 +54,10 @@ class TodosController extends \controllers\ControllerBase{
 
 	#[Post(path: "edit/{index}",name: "todos.edit")]
 	public function editElement($index){
-		
-
+        //error problème à résoudre
+        $list=USession::get('list',[]);
+        $list=USession::set(self::ACTIVE_LIST_SESSION_KEY,$list);
+        $this->index();
 
 	}
 
@@ -85,5 +92,16 @@ class TodosController extends \controllers\ControllerBase{
 
 
 	}
+
+    protected function getAuthController(): AuthController
+    {
+        return new MyAuth($this);
+    }
+
+	
+/*	public function updadeElement($index){
+		$list=USession::get(self::ACTIVE_LIST_SESSION_KEY);
+        $list[$index]=URequest::post()
+	}*/
 
 }
