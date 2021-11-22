@@ -1,0 +1,26 @@
+<form class="ui form" action="{{ path('orga.add') }}" method="post">
+
+    <div class="field">
+        <label>Nom</label>
+        <div class="ui input">
+            <input type="text" name="name" placeholder="Nom" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label>Domaine</label>
+        <div class="ui input">
+            <input type="text" name="domain" placeholder="Domaine" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label>Alias</label>
+        <div class="ui input">
+            <input type="text" name="aliases" placeholder="Alias" required>
+        </div>
+    </div>
+
+    <button class="ui button green fluid">Ajouter</button>
+
+</form>

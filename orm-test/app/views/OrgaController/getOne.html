@@ -9,24 +9,29 @@
 {% block body %}
 <h1>{{byId.name}}</h1>
 <table class="ui celled table">
-<h3>Groupes</h3>
-{% for groupe in byId.groupes %}
-<li>{{groupe.name}}
-    <a href="">
 
-    </a>
-</li>
-{% endfor %}
+    <tr>
+        <th><h3>Groupes</h3></th>
+        <th><h3>Utilisateurs</h3></th>
+    </tr>
 
-<br><br>
-<h3>Utilisateurs</h3>
-{% for user in byId.users %}
-<li>{{user.Firstname}}
-    <a href="">
+    <tr>
+        <td>
+            {% for groupe in byId.groupes %}
+            <li>{{groupe.name}}
+                <a href=""></a>
+            </li>
+            {% endfor %}
+        </td>
 
-    </a>
-</li>
+        <td>
+            {% for user in byId.users %}
+            <li>{{user.Firstname}}
+                <a href=""></a>
+            </li>
+            {% endfor %}
+        </td>
+    </tr>
+
 </table>
-{% endfor %}
-
 {% endblock %}

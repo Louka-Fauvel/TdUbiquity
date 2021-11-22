@@ -63,12 +63,53 @@ class OrgaController extends \controllers\ControllerBase{
         $this->index();
     }
 
-	#[Get(path: "orgas/{id}",name: "orga.getOne")]
+	#[Get(path: "orgas/organisation/{id}",name: "orga.getOne")]
 	public function getOne($id){
 
-        $this->repo->byId($id,['users','groupes']);
+        $test = $this->repo->byId($id,['users','groupes']);
 		$this->loadView('OrgaController/getOne.html');
 
 	}
 
+	#[Get(path: "orgas/addForm",name: "orga.addForm")]
+	public function addForm(){
+
+        $this->loadView('OrgaController/add.html');
+
+	}
+
+	#[Post(path: "orgas/add",name: "orga.add")]
+	public function add(){
+
+        $orga=new Organization();
+        URequest::setValuesToObject($orga);
+
+        if(DAO::insert($orga)){
+
+            $this->index();
+            $this->loadView('OrgaController/message.html',['color'=>'success', 'icon'=>'warehouse', 'message'=>"$orga a été ajoutée"]);
+
+        } else {
+
+            $this->index();
+            $this->loadView('OrgaController/message.html',['color'=>'error', 'icon'=>'warehouse', 'message'=>"$orga n'a pas été ajoutée"]);
+
+        }
+	}
+
+	#[Get(path: "orgas/deleteForm/{id}",name: "orga.deleteForm")]
+	public function deleteForm($id){
+
+        $orga=$this->repo->byId($id, false);
+		$this->loadView('OrgaController/deleteForm.html', ['orga'=>$orga]);
+	}
+
+	#[Post(path: "orgas/delete",name: "orga.delete")]
+	public function delete(){
+
+        if(DAO::delete(Organization::class,$idOrga)){
+            //TODO afficher message suppression réussie
+        }
+
+	}
 }

@@ -3,19 +3,35 @@
 <a href="{{ path('orga.index') }}" data-target="body"  class="ui basic inverted button">
     <i class="factory icon"></i>Organisations
 </a>
+<a href="{{ path('orga.addForm') }}" data-target="body"  class="ui basic inverted button">
+    <i class="factory icon"></i>Nouvelles Organisations
+</a>
 {% endblock %}
 
 {% block body %}
 {{ parent() }}
 <h1>Organisations</h1>
 <ul>
+        <div class="ui list">
     {% for orga in all %}
+    <div class="item">
     <li>
         <a href="{{ path('orga.getOne',[orga.id]) }}">{{orga.name}}</a>
-        <a href="{{path('orgas.update',[orga.id])}}">
-            <i class="ui edit icon"></i>
+        <a class="active" href="{{path('orga.deleteForm',[orga.id])}}">
+            <span class="ui circular mini icon inverted red button right floated">
+                <i class="ui times icon"></i>
+            </span>
         </a>
+        <a class="active" href="{{path('orgas.update',[orga.id])}}">
+            <span class="ui circular mini icon grey button right floated">
+            <i class="ui edit icon"></i>
+            </span>
+        </a>
+
     </li>
+    </div>
     {% endfor %}
+
+        </div>
 </ul>
 {% endblock %}
