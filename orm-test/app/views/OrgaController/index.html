@@ -3,9 +3,23 @@
 <a href="{{ path('orga.index') }}" data-target="body"  class="ui basic inverted button">
     <i class="factory icon"></i>Organisations
 </a>
-<a href="{{ path('orga.addForm') }}" data-target="body"  class="ui basic inverted button">
-    <i class="factory icon"></i>Nouvelles Organisations
-</a>
+
+<div class="ui compact menu">
+<div class="ui simple dropdown item">
+    Dropdown
+    <i class="dropdown icon"></i>
+    <div class="menu">
+        <div class="item">
+            <a href="{{ path('orga.addForm') }}" data-target="body"  class="ui basic inverted button">
+                <i class="plus icon"></i>Nouvelles Organisations
+            </a>
+        </div>
+        <div class="item">Choice 2</div>
+        <div class="item">Choice 3</div>
+    </div>
+</div>
+</div>
+
 {% endblock %}
 
 {% block body %}

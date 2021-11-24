@@ -87,12 +87,12 @@ class OrgaController extends \controllers\ControllerBase{
         if(DAO::insert($orga)){
 
             $this->index();
-            $this->loadView('OrgaController/message.html',['color'=>'success', 'icon'=>'warehouse', 'message'=>"$orga a été ajoutée"]);
+            $this->loadView('OrgaController/message.html',['color'=>'success', 'icon'=>'warehouse', 'orgaName'=>$orga, 'message'=>" a été ajoutée"]);
 
         } else {
 
             $this->index();
-            $this->loadView('OrgaController/message.html',['color'=>'error', 'icon'=>'warehouse', 'message'=>"$orga n'a pas été ajoutée"]);
+            $this->loadView('OrgaController/message.html',['color'=>'error', 'icon'=>'close', 'orgaName'=>$orga, 'message'=>" n'a pas été ajoutée"]);
 
         }
 	}
@@ -107,9 +107,18 @@ class OrgaController extends \controllers\ControllerBase{
 	#[Post(path: "orgas/delete",name: "orga.delete")]
 	public function delete(){
 
-        if(DAO::delete(Organization::class,$idOrga)){
-            //TODO afficher message suppression réussie
-        }
+        $idOrga=$this->repo->byId(URequest::post('id'));
 
+        if(DAO::delete(Organization::class,$idOrga->getId())){
+
+            $this->index();
+            $this->loadView('OrgaController/message.html',['color'=>'yellow', 'icon'=>'check', 'orgaName'=>$idOrga, 'message'=>" a été supprimée"]);
+
+        } else {
+
+            $this->index();
+            $this->loadView('OrgaController/message.html',['color'=>'error', 'icon'=>'close', 'orgaName'=>$idOrga, 'message'=>" n'a pas été supprimée"]);
+
+        }
 	}
 }
