@@ -25,7 +25,7 @@ class IndexCrudController extends \Ubiquity\controllers\crud\MultiResourceCRUDCo
 	}
 
 	protected function getIndexType():array {
-		return ['four link cards','card'];
+		return ['two link cards','card'];
 	}
 	
 	public function _getBaseRoute():string {
