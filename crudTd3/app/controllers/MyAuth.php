@@ -1,5 +1,8 @@
 <?php
 namespace controllers;
+use models\User;
+use Ubiquity\orm\DAO;
+use Ubiquity\utils\http\UResponse;
 use Ubiquity\utils\http\USession;
 use Ubiquity\utils\http\URequest;
 use controllers\auth\files\MyAuthFiles;
@@ -13,15 +16,15 @@ class MyAuth extends \Ubiquity\controllers\auth\AuthController{
 
 		$urlParts=$this->getOriginalURL();
 		USession::set($this->_getUserSessionKey(), $connected);
-
+        //var_dump($connected);
+        //var_dump($urlParts);
 		if(isset($urlParts)) {
 
 			$this->_forward(implode("/",$urlParts));
 
 		} else {
 
-			//TODO
-			//Forwarding to the default controller/action
+            UResponse::header('location','/');
 
 		}
 	}
@@ -32,10 +35,10 @@ class MyAuth extends \Ubiquity\controllers\auth\AuthController{
 
 			$email=URequest::post($this->_getLoginInputName());
 			$password=URequest::post($this->_getPasswordInputName());
-			//TODO
-			//Loading from the database the user corresponding to the parameters
-			//Checking user creditentials
-			//Returning the user
+            //var_dump($email);
+            //$test=DAO::uGetOne(User::class, "email=? and password= ?",false,[$email,$password]);
+
+            return DAO::uGetOne(User::class, "email=? and password= ?",false,[$email,$password]);
 
 		}
 

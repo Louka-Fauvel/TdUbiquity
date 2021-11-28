@@ -6,6 +6,7 @@ namespace controllers;
  /**
   * Controller MainController
   * faire la commande pour avoir les dernière version : composer require phpmv/ubiquity:dev-master
+  * faire la commande pour autoload les pages : npm install -g livereload
   * @property JsUtils $jquery
   */
 class MainController extends \controllers\ControllerBase{
