@@ -108,12 +108,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpMv/ubiquity.git",
-                "reference": "100a68a8a77098fb2091fe3d3ce1e292dbe383be"
+                "reference": "0b4fcc5720382a1992d798dcbc6b61c7751397e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpMv/ubiquity/zipball/100a68a8a77098fb2091fe3d3ce1e292dbe383be",
-                "reference": "100a68a8a77098fb2091fe3d3ce1e292dbe383be",
+                "url": "https://api.github.com/repos/phpMv/ubiquity/zipball/0b4fcc5720382a1992d798dcbc6b61c7751397e1",
+                "reference": "0b4fcc5720382a1992d798dcbc6b61c7751397e1",
                 "shasum": ""
             },
             "require": {
@@ -159,7 +159,7 @@
                 "issues": "https://github.com/phpMv/ubiquity/issues",
                 "source": "https://github.com/phpMv/ubiquity/tree/master"
             },
-            "time": "2021-11-24T01:22:29+00:00"
+            "time": "2021-11-28T11:43:51+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -601,16 +601,16 @@
         },
         {
             "name": "phpmv/ubiquity-debug",
-            "version": "0.0.7",
+            "version": "0.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpMv/ubiquity-debug.git",
-                "reference": "d93f674567683ae4235c24d453ac4b0320a51a84"
+                "reference": "747ad11dc751cfca2e3f4a6e7f1bdea48db21658"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpMv/ubiquity-debug/zipball/d93f674567683ae4235c24d453ac4b0320a51a84",
-                "reference": "d93f674567683ae4235c24d453ac4b0320a51a84",
+                "url": "https://api.github.com/repos/phpMv/ubiquity-debug/zipball/747ad11dc751cfca2e3f4a6e7f1bdea48db21658",
+                "reference": "747ad11dc751cfca2e3f4a6e7f1bdea48db21658",
                 "shasum": ""
             },
             "require": {
@@ -650,9 +650,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phpMv/ubiquity-debug/issues",
-                "source": "https://github.com/phpMv/ubiquity-debug/tree/0.0.7"
+                "source": "https://github.com/phpMv/ubiquity-debug/tree/0.0.8"
             },
-            "time": "2021-11-27T11:21:17+00:00"
+            "time": "2021-11-27T15:13:37+00:00"
         },
         {
             "name": "phpmv/ubiquity-dev",

@@ -2,6 +2,7 @@
 namespace controllers;
 use models\User;
 use Ubiquity\orm\DAO;
+use Ubiquity\utils\flash\FlashMessage;
 use Ubiquity\utils\http\UResponse;
 use Ubiquity\utils\http\USession;
 use Ubiquity\utils\http\URequest;
@@ -45,8 +46,14 @@ class MyAuth extends \Ubiquity\controllers\auth\AuthController{
 		return;
 
 	}
-	
-	/**
+
+    /*protected function noAccessMessage(FlashMessage $fMessage) {
+
+        return $fMessage = ('aze');
+    }*/
+
+
+    /**
 	 * {@inheritDoc}
 	 * @see \Ubiquity\controllers\auth\AuthController::isValidUser()
 	 */
