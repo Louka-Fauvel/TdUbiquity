@@ -37,87 +37,72 @@ class Organization{
 	#[OneToMany(mappedBy: "organization",className: "models\\User")]
 	private $users;
 
-
 	 public function __construct(){
 		$this->groups = [];
 		$this->users = [];
 	}
 
-
 	public function getId(){
 		return $this->id;
 	}
-
 
 	public function setId($id){
 		$this->id=$id;
 	}
 
-
 	public function getName(){
 		return $this->name;
 	}
-
 
 	public function setName($name){
 		$this->name=$name;
 	}
 
-
 	public function getDomain(){
 		return $this->domain;
 	}
-
 
 	public function setDomain($domain){
 		$this->domain=$domain;
 	}
 
-
 	public function getAliases(){
 		return $this->aliases;
 	}
-
 
 	public function setAliases($aliases){
 		$this->aliases=$aliases;
 	}
 
-
 	public function getGroups(){
 		return $this->groups;
 	}
 
-
 	public function setGroups($groups){
 		$this->groups=$groups;
 	}
-
 
 	 public function addToGroups($group){
 		$this->groups[]=$group;
 		$group->setOrganization($this);
 	}
 
-
 	public function getUsers(){
 		return $this->users;
 	}
 
-
 	public function setUsers($users){
 		$this->users=$users;
 	}
-
 
 	 public function addToUsers($user){
 		$this->users[]=$user;
 		$user->setOrganization($this);
 	}
 
-
 	 public function __toString(){
 		return ($this->domain??'no value').'';
 	}
+
 
 }

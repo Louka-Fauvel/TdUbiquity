@@ -1,6 +1,7 @@
 <?php
 namespace controllers;
 use models\User;
+use Ubiquity\controllers\auth\AuthController;
 use Ubiquity\orm\DAO;
 use Ubiquity\utils\flash\FlashMessage;
 use Ubiquity\utils\http\UResponse;
@@ -39,7 +40,8 @@ class MyAuth extends \Ubiquity\controllers\auth\AuthController{
             //var_dump($email);
             //$test=DAO::uGetOne(User::class, "email=? and password= ?",false,[$email,$password]);
 
-            return DAO::uGetOne(User::class, "email=? and password= ?",false,[$email,$password]);
+            //return DAO::uGetOne(User::class, "email=? and password= ?",true,[$email,$password]);
+            return DAO::uGetOne(User::class, "email=?",true,[$email]);
 
 		}
 
@@ -47,10 +49,29 @@ class MyAuth extends \Ubiquity\controllers\auth\AuthController{
 
 	}
 
-    /*protected function noAccessMessage(FlashMessage $fMessage) {
+    protected function noAccessMessage(FlashMessage $fMessage) {
 
-        return $fMessage = ('aze');
-    }*/
+        $fMessage->setTitle('Accès interdit !');
+        $fMessage->setContent("Vous n'êtes pas autorisé à accéder à cette page.");
+        $this->_setLoginCaption('Connexion');
+
+    }
+
+    protected function terminateMessage(FlashMessage $fMessage) {
+
+        $fMessage->setTitle('Fermeture');
+        $fMessage->setContent("Vous avez été correctement déconnecté de l'application.");
+        $this->_setLoginCaption('Connexion');
+
+    }
+
+    protected function badLoginMessage(FlashMessage $fMessage) {
+
+        $fMessage->setTitle('Problème de connection');
+        $fMessage->setContent("Les informations d'identification sont invalides !");
+        $this->_setLoginCaption('Connexion');
+
+    }
 
 
     /**

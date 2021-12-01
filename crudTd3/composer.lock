@@ -108,12 +108,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpMv/ubiquity.git",
-                "reference": "0b4fcc5720382a1992d798dcbc6b61c7751397e1"
+                "reference": "394e4e3f0a86c75bf3707c1cfc46d6b219f6874d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpMv/ubiquity/zipball/0b4fcc5720382a1992d798dcbc6b61c7751397e1",
-                "reference": "0b4fcc5720382a1992d798dcbc6b61c7751397e1",
+                "url": "https://api.github.com/repos/phpMv/ubiquity/zipball/394e4e3f0a86c75bf3707c1cfc46d6b219f6874d",
+                "reference": "394e4e3f0a86c75bf3707c1cfc46d6b219f6874d",
                 "shasum": ""
             },
             "require": {
@@ -159,7 +159,7 @@
                 "issues": "https://github.com/phpMv/ubiquity/issues",
                 "source": "https://github.com/phpMv/ubiquity/tree/master"
             },
-            "time": "2021-11-28T11:43:51+00:00"
+            "time": "2021-12-01T00:32:11+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
